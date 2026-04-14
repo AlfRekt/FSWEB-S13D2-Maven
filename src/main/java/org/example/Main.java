@@ -4,16 +4,15 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
-    public static boolean isPalindrome(int number){
+    public static boolean isPalindrome(int number) {
+        number = Math.abs(number);
         int original = number;
         int reversed = 0;
-        if(number < 0) {
-            number = number * -1;
-        }
-        while(number > 0){
-            int digit = number % 10;
-            reversed = reversed * 10 + digit;
-            number /= 10;
+
+        while (number > 0) {
+            int digit = number % 10;       // son basamağı al
+            reversed = reversed * 10 + digit; // ters sayıyı oluştur
+            number /= 10;                 // sayıyı küçült
         }
 
         return original == reversed;
